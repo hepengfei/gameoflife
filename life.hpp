@@ -11,7 +11,7 @@ public:
 private:
     int _x;
     int _y;
-    char _grid;
+    char *_grid;
 };
 
 void nextGeneration(const Grid &prev,

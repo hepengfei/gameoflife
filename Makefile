@@ -20,6 +20,7 @@ OBJS=$(patsubst %.cpp,%.o,$(SRCS))
 
 # ====== header end ======
 
-test:life_test.o
+test:life_test.o life.o
 	$(CXX) -o $@ $^ $(LDFLAGS) -lgtest -lgtest_main
+	./test
 

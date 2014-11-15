@@ -8,6 +8,9 @@ public:
     bool isAlive(int x, int y) const;
     int numberOfAliveAround(int x, int y) const;
 
+    int x() const { return _x; }
+    int y() const { return _y; }
+
 private:
     int _x;
     int _y;

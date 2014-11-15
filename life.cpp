@@ -51,5 +51,31 @@ int Grid::numberOfAliveAround(int x, int y) const
 void nextGeneration(const Grid &prev,
                     Grid &next)
 {
+    int x = prev.x();
+    int y = prev.y();
+
+    next.init(x, y);
+
+    for(int i=0; i<x; ++i)
+    {
+        for(int j=0; j<y; ++j)
+        {
+            int num = prev.numberOfAliveAround(i,j);
+            if(prev.isAlive(i,j))
+            {
+                if(num == 2 || num == 3)
+                {
+                    next.setAlive(i,j);
+                }
+            }
+            else
+            {
+                if(num == 3)
+                {
+                    next.setAlive(i,j);
+                }
+            }
+        }
+    }
 }
 
